@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id          Int           @id @default(autoincrement())
+  username    String
+  email       String        @unique
+  password    String
+  role        String        @default("user")
+  verified    Boolean       @default(false)
+  created_at  DateTime      @default(now())
+  first_ip    String?
+  last_ip     String?
+  userTickets userTickets[]
+}
+
+model Tickets {
+  id          Int           @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+  location    String
+  capacity    Int
+  price       Float
+  available   Int
+  category    Category?
+  isDeleted   Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+  userTickets userTickets[]
+}
+
+model userTickets {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  ticketId   Int
+  finalPrice Decimal
+  createdAt  DateTime @default(now())
+  ticket     Tickets  @relation(fields: [ticketId], references: [id])
+  user       Users    @relation(fields: [userId], references: [id])
+
+  @@unique([userId, ticketId])
+}
+
+model VerificationCode {
+  id        Int      @id @default(autoincrement())
+  email     String
+  code      String
+  expiresAt DateTime
+}
+
+enum Category {
+  SPORT
+  CINEMA
+  SCIENCE
+  ENTERTAINMENT
+  LASTEST
+}
