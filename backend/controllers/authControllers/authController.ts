@@ -109,7 +109,8 @@ export const LoginUser = async (req: Request<{}, {}, ILogin>, res: Response, nex
     const token = jwt.sign(userPayload, SECRECT, { expiresIn: '1w' })
     res.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'strict',
+      secure: true,
+      sameSite: 'none',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     })
 
