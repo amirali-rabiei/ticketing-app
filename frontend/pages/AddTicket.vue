@@ -74,75 +74,74 @@ const getSelectedGategory = (e) => {
         <form class="p-2 flex flex-col items-center">
             <div class="flex flex-col md:flex-row gap-x-2">
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Title">
                         Title
                     </label>
                     <input v-model="title"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="username" type="text" placeholder="Username">
+                        id="Title" type="text" placeholder="Ticket Title">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
                         Description
                     </label>
                     <input v-model="description"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="email" type="text" placeholder="Email">
+                        id="description" type="text" placeholder="Ticket Description">
                 </div>
             </div>
             <div class="flex flex-col md:flex-row gap-x-2">
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
                         Date
                     </label>
                     <input v-model="date"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="date" type="datetime-local" placeholder="Date">
+                        id="date" type="datetime-local">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
                         Location
                     </label>
                     <input v-model="location"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="password" type="text" placeholder="Password">
+                        id="location" type="text" placeholder="Ticket Location">
                 </div>
             </div>
             <div class="flex flex-col md:flex-row  gap-x-2">
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="capacity">
                         Capacity
                     </label>
                     <input v-model="capacity"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="password" type="text" placeholder="Password">
+                        id="capacity" type="text" placeholder="Ticket Capacity">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
                         Price
                     </label>
                     <input v-model="price"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="password" type="text" placeholder="Password">
+                        id="price" type="text" placeholder="Ticket Price">
                 </div>
             </div>
             <div class="flex flex-col md:flex-row  gap-x-2">
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="available">
                         Available
                     </label>
                     <input v-model="available"
                         class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="password" type="text" placeholder="Password">
+                        id="available" type="text" placeholder="Ticket Available">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="category">
                         Category
                     </label>
 
                     <select v-on:change="getSelectedGategory"
-                        class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        name="" id="">
+                        class="shadow appearance-none border-[#4C80F0] border-1 rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         <option value="">not selected</option>
                         <option value="SCIENCE">science</option>
                         <option value="ENTERTAINMENT">entertainment</option>

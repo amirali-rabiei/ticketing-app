@@ -73,7 +73,8 @@ const auth = useAuthStore()
                         <a href="">Support</a>
                     </div>
 
-                    <div class="flex items-center gap-6 bg-[#F4F7FE] p-2 text-[#1F2D3D] rounded-[4px]">
+                    <div v-if="auth.role === 'admin'"
+                        class="flex items-center gap-6 bg-[#F4F7FE] p-2 text-[#1F2D3D] rounded-[4px]">
                         <Plus size="20" />
                         <RouterLink to="/addTicket">Add Ticket</RouterLink>
                     </div>

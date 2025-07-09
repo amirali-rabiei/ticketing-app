@@ -6,6 +6,7 @@ export const useAuthStore = defineStore('auth', {
     state: (() => ({
         username: '',
         email: '',
+        role: '',
         isAuth: false,
     })),
 
@@ -19,6 +20,8 @@ export const useAuthStore = defineStore('auth', {
 
                 this.username = response.data.username
                 this.email = response.data.email
+                this.email = response.data.role
+
 
                 if (response.status === 200) {
                     localStorage.setItem('isAuth', '1')
