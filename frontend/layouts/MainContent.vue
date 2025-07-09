@@ -11,9 +11,8 @@ let startIndex = ref(0)
 onMounted(async () => {
     try {
 
-        const response = await axios.post(`https://ticketing-app-pied.vercel.app/fetchPopularTickets`)
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/fetchPopularTickets`)
         tickets.value = response.data
-        console.log(response.data)
 
 
 
