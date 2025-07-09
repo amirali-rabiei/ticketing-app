@@ -27,7 +27,7 @@ onBeforeMount(async () => {
 const handlePurchase = async () => {
     try {
 
-        const response = await axios.post(`http://localhost:4000/purchase/${ticketId}`, { quantity: quantity.value }, {
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/purchase/${ticketId}`, { quantity: quantity.value }, {
             withCredentials: true
         })
 

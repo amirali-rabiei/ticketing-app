@@ -43,10 +43,10 @@ onBeforeMount(async () => {
 
     try {
 
-        const response = await axios.post('http://localhost:4000/fetchTicket/lastest')
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/fetchTicket/lastest`)
         lastestTickets.value = response.data
 
-        const solidTicketByMonth = await axios.get('http://localhost:4000/solidTicketsByMonth')
+        const solidTicketByMonth = await axios.get(`${import.meta.env.VITE_BASE_URL}/solidTicketsByMonth`)
         result.value = solidTicketByMonth.data
 
         const labels = result.value.map(item =>
@@ -55,7 +55,7 @@ onBeforeMount(async () => {
         const totals = result.value.map(item => item.total)
 
         series.value = [{
-            name: 'تعداد فروش',
+            name: 'total of solid',
             data: totals
         }]
 

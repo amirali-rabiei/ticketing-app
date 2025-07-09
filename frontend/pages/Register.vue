@@ -31,7 +31,7 @@ const HandleSubmit = async () => {
                 password: password.value,
             }
 
-            await fetch('http://localhost:4000/RegisterUser', {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/RegisterUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'Application/json'

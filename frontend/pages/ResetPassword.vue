@@ -23,7 +23,7 @@ const HandleChangePassword = async () => {
         } else {
             errorMessage.value = ''
 
-            await axios.post(`http://localhost:4000/reset/${token}`, { newPassword: newPassword.value }, {
+            await axios.post(`${import.meta.env.VITE_BASE_URL}/reset/${token}`, { newPassword: newPassword.value }, {
                 withCredentials: true
             })
                 .then((response) => {

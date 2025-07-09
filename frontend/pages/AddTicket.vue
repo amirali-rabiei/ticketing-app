@@ -51,18 +51,10 @@ const HandleSubmit = async (e) => {
             }
 
 
-            const response = await axios.post('http://localhost:4000/addTicket', data, {
+            const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/addTicket`, data, {
                 withCredentials: true
             })
-
-            console.log(response.data)
-
         }
-
-
-
-
-
 
     } catch (error) {
         console.log(error)

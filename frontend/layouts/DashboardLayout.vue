@@ -9,7 +9,7 @@ const router = useRouter()
 const handleForgetPassword = async () => {
     try {
 
-        const response = await axios.post('http://localhost:4000/forgetPassword', {}, {
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/forgetPassword`, {}, {
             withCredentials: true
         })
         console.log(response.data)
@@ -22,7 +22,7 @@ const handleForgetPassword = async () => {
 const handleLogout = async () => {
     try {
 
-        await axios.post('http://localhost:4000/LogoutUser', {}, {
+        await axios.post(`${import.meta.env.VITE_BASE_URL}/LogoutUser`, {}, {
             withCredentials: true
         })
 

@@ -13,7 +13,7 @@ export const useAuthStore = defineStore('auth', {
         async fetchUser() {
             try {
 
-                const response = await axios.post('http://localhost:4000/api/me', {}, {
+                const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/me`, {}, {
                     withCredentials: true
                 })
 

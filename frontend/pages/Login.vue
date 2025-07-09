@@ -26,7 +26,7 @@ const HandleLogin = async () => {
             }
 
 
-            await fetch('http://localhost:4000/LoginUser', {
+            await fetch(`${import.meta.env.VITE_BASE_URL}/LoginUser`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'Application/json'
@@ -58,7 +58,7 @@ const HandleLogin = async () => {
 const handleForgetPassword = async () => {
     try {
 
-        const response = await axios.post('http://localhost:4000/forgetPassword', { email: email.value })
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/forgetPassword`, { email: email.value })
         console.log(response.data)
 
     } catch (error) {

@@ -22,7 +22,7 @@ const HandleVerifyCode = async () => {
                 code: code.value
             }
 
-            fetch('http://localhost:4000/VerificationCode', {
+            fetch(`${import.meta.env.VITE_BASE_URL}/VerificationCode`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'Application/json'
